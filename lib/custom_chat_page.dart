@@ -85,6 +85,7 @@ class _CustomChatPageState extends State<CustomChatPage> {
                     userName: _messages[index].sender?.nickname,
                     timeStamp: _messages[index].createdAt,
                     profileUrl: _messages[index].sender!.profileUrl,
+                    isActive: _messages[index].sender!.isActive!,
                   );
                 }),
               ),

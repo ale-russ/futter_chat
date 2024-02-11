@@ -72,7 +72,6 @@ class _ChatMessageState extends State<ChatMessage> {
                 minWidth: 80,
               ),
               margin: const EdgeInsets.symmetric(
-                // vertical: 10.0,
                 horizontal: 20.0,
               ),
               padding:
@@ -113,11 +112,27 @@ class _ChatMessageState extends State<ChatMessage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  widget.userName != null
-                      ? Text(widget.userName!,
-                          style: const TextStyle(
-                              fontSize: 16.0, color: Color(0XFFADADAD)))
-                      : const SizedBox(height: 0, width: 0),
+                  !widget.isSentByMe
+                      ? Row(
+                          mainAxisSize: MainAxisSize.min,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(widget.userName ?? '',
+                                style: const TextStyle(
+                                    fontSize: 16.0, color: Color(0XFFADADAD))),
+                                    const SizedBox(width: 8),
+                            Container(
+                              height: 8,
+                              width: 8,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: widget.isActive
+                                      ? const Color(0XFF46F9F5)
+                                      : const Color(0XFF101010)),
+                            )
+                          ],
+                        )
+                      : const SizedBox.shrink(),
                   Text(
                     widget.message,
                     style: const TextStyle(fontSize: 16.0, color: Colors.white),
