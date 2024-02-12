@@ -2,12 +2,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RandomAvatar extends StatelessWidget {
-  final String initials;
+  // final String initials;
   final String profileUrl;
 
   const RandomAvatar({
     Key? key,
-    required this.initials,
+    // required this.initials,
     required this.profileUrl,
   }) : super(key: key);
 
@@ -40,7 +40,7 @@ class RandomAvatar extends StatelessWidget {
       child: Center(
         child: profileUrl.isEmpty
             ? Text(
-                initials,
+                '👻',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: avatarSize * 0.5,

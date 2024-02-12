@@ -64,7 +64,8 @@ class _ChatMessageState extends State<ChatMessage> {
                     padding: const EdgeInsets.only(left: 8),
                     alignment: Alignment.topLeft,
                     child: RandomAvatar(
-                        initials: 'AB', profileUrl: widget.profileUrl))
+                        
+                        profileUrl: widget.profileUrl))
                 : const SizedBox.shrink(),
             Container(
               constraints: BoxConstraints(
@@ -115,12 +116,12 @@ class _ChatMessageState extends State<ChatMessage> {
                   !widget.isSentByMe
                       ? Row(
                           mainAxisSize: MainAxisSize.min,
-                         crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(widget.userName ?? '',
                                 style: const TextStyle(
                                     fontSize: 16.0, color: Color(0XFFADADAD))),
-                                    const SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Container(
                               height: 8,
                               width: 8,
